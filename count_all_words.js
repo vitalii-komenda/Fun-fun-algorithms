@@ -5,13 +5,11 @@ countWords = (function(){
       words = word.split(','),
       currwords = '',
       counts = 0,
-      mas = [];
+      mas = text.toLowerCase().split(' ');
 
       for( o in words ) {
        counts = 0;
-       currWords = words[ o ];
-
-       mas = text.toLowerCase().split(' ');
+       currWords = words[ o ];       
 
        for(var i in mas){
          if( currWords.toLowerCase() == mas[i].replace(/[\.,!=\\\/]/g, '') ){
