@@ -1,4 +1,4 @@
-var word = 'the',
+var word = 'the,sadasada',
     text = 'the THE, thehostthehost sadasada',
     res = [],
     words = word.split(',')
@@ -20,4 +20,4 @@ for( o in words ) {
    res[res.length] = '[' + words[ o ] + ']' + ' - ' + counts;
 }
 
-console.log( res.join(', ') );
+console.log( res.join(', ') ); // [the] - 2, [sadasada] - 1
