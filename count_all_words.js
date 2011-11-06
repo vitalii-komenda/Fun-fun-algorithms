@@ -1,23 +1,29 @@
-var word = 'the,sadasada',
-    text = 'the THE, thehostthehost sadasada',
-    res = [],
-    words = word.split(',')
-    currwords = '',
-    counts = 0;
+countWords = (function(){
+  var countAllWords = {
+    count: function(word, text){
+      var res = [],
+      words = word.split(','),
+      currwords = '',
+      counts = 0,
+      mas = [];
 
+      for( o in words ) {
+       counts = 0;
+       currWords = words[ o ];
 
-for( o in words ) {
-   counts = 0;
-   currWords = words[ o ];
+       mas = text.toLowerCase().split(' ');
 
-   mas = text.toLowerCase().split(' ');
+       for(var i in mas){
+         if( currWords.toLowerCase() == mas[i].replace(/[\.,!=\\\/]/g, '') ){
+           ++counts;
+         }
+       }
+       res[res.length] = '[' + words[ o ] + ']' + ' - ' + counts;
+      }
+      return res;
+    }
+  }
+  return countAllWords.count;
+})();
 
-   for(i in mas){
-     if( currWords.toLowerCase() == mas[i].replace(/[\.,!=\\\/]/g, '') ){
-       ++counts;
-     }
-   }
-   res[res.length] = '[' + words[ o ] + ']' + ' - ' + counts;
-}
-
-console.log( res.join(', ') ); // [the] - 2, [sadasada] - 1
+console.log( countWords('the,sadasada', 'the THE, thehostthehost sadasada').join(', ') ); // [the] - 2, [sadasada] - 1
