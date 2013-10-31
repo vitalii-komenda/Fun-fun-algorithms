@@ -1,0 +1,16 @@
+{
+  "name": "Useful scripts",
+  "version": "0.0.0.1",
+  "author": "morf <imorfie@gmail.com>",
+  "description": "a simple scripts",
+  "scripts": {
+    "test": "mocha",
+  },
+  "dependencies" : {
+    "mocha" :  "*",
+  },
+  "license": "GPL",
+  "engines": {
+    "node": ">=0.6"
+  }
+}

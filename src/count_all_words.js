@@ -1,6 +1,5 @@
 countWords = (function(){
-  var countAllWords = {
-    count: function(word, text){
+  var process = function(word, text){
       var res = [],
       words = word.split(','),
       currwords = '',
@@ -16,12 +15,13 @@ countWords = (function(){
            ++counts;
          }
        }
-       res[res.length] = '[' + words[ o ] + ']' + ' - ' + counts;
+       res[words[ o ]] = counts;
       }
       return res;
     }
-  }
-  return countAllWords.count;
+  return process;
 })();
 
-console.log( countWords('the,sadasada', 'the THE, thehostthehost sadasada').join(', ') ); // [the] - 2, [sadasada] - 1
+exports.countWords = countWords;
+
+console.log( countWords('the,sadasada', 'the THE, thehostthehost sadasada') ); // [the] - 2, [sadasada] - 1
