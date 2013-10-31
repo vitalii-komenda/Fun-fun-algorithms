@@ -1,13 +1,13 @@
 {
-  "name": "Useful scripts",
-  "version": "0.0.0.1",
+  "name": "Useful-scripts",
+  "version": "0.0.1",
   "author": "morf <imorfie@gmail.com>",
   "description": "a simple scripts",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha"
   },
-  "dependencies" : {
-    "mocha" :  "*",
+  "dependencies": {
+    "mocha":  "*"
   },
   "license": "GPL",
   "engines": {
