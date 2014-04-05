@@ -6,7 +6,7 @@ class Tree
   end
 
   def print_tree
-    current = {first: (tree_size ** 2).to_f, step: 0}
+    current = {first: tree_size ** 2, step: 0}
     @lines.each do |line|
       print " " * current[:first]
       line.split(" ").each do |leaf_v|
