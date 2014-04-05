@@ -2,10 +2,10 @@ bbToHtml.php - convert bb to html
 -
 count_all_words.js - words counter
 -
-jquery.hintWidthDefaultValue.js - add hint with default value
+jquery.hintWidthDefaultValue.js - add default value hint 
 -
 
--tree.rb is tree printer
+-tree.rb is a tree printer
                          a
              b                       c                       
        d           e           f           g           
