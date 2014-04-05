@@ -6,22 +6,20 @@ class Tree
   end
 
   def print_tree
-     parent = {first: (tree_size ** 2).to_f, step: 0 }
-     @lines.each do |line|
-       center_to = parent
-       print " " * center_to[:first]
-       line.split(" ").each do |leaf_v|
-         print leaf_v
-         print " " * center_to[:step]
-       end
-       center_to = get_pos(parent)
-       parent = center_to
-       puts
-     end
+    current = {first: (tree_size ** 2).to_f, step: 0}
+    @lines.each do |line|
+      print " " * current[:first]
+      line.split(" ").each do |leaf_v|
+        print leaf_v
+        print " " * current[:step]
+      end
+      current = get_pos(current)
+      puts
+    end
   end
 
   def get_pos(parent)
-    {first: (parent[:first].to_f / 2).round(), step: parent[:first] - 2 }
+    {first: (parent[:first].to_f / 2).round(), step: parent[:first] - 2}
   end
 
   def tree_size
