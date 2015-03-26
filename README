@@ -4,6 +4,8 @@ count_all_words.js - words counter
 -
 jquery.hintWidthDefaultValue.js - add default value hint 
 -
+oop-calc.js - solid OOP calculator example 
+-
 
 -tree.rb is a tree printer
                          a
