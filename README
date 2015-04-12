@@ -1,13 +1,15 @@
-bbToHtml.php - convert bb to html
--
-count_all_words.js - words counter
--
-jquery.hintWidthDefaultValue.js - add default value hint 
--
-oop-calc.js - solid OOP calculator example 
--
+Here is a list of algorithms: 
 
--tree.rb is a tree printer
+bbToHtml.php - converts bb tags to html 
+-
+count_all_words.js - counts words in a sentence
+-
+jquery.hintWidthDefaultValue.js - jquery plugin which adds default hint to empty inputs. 
+It is like placeholder attribute for old browsers. 
+-
+oop-calc.js - calculator that follows SOLID principles 
+-
+-tree.rb - builds a tree from a string
                          a
              b                       c                       
        d           e           f           g           
