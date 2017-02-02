@@ -1,10 +1,10 @@
-var TicTacToe = React.createClass({
+const TicTacToe = React.createClass({
   getInitialState: function () {
     return {
       coords: [
         [0, 0, 0],
         [0, 0, 0],
-        [0, 0, -1]
+        [0, 0, 0]
       ],
       winningCombination: [
         [[0, 0], [0, 1], [0, 2]],
@@ -32,15 +32,14 @@ var TicTacToe = React.createClass({
       return calculateProbability(combination, state);
     });
   },
-  
+
   makeMove: function (combinationIndexes) {
-  console.log(combinationIndexes)
     let combinationIndex = combinationIndexes[0];
     let moveMade = false;
-    if(!this.state.winningCombination[combinationIndex]){
+    if (!this.state.winningCombination[combinationIndex]) {
       return;
     }
-    for(let i=0; i<this.state.winningCombination[combinationIndex].length; i++){
+    for (let i = 0; i < this.state.winningCombination[combinationIndex].length; i++) {
       let coord = this.state.winningCombination[combinationIndex][i];
       if (this.state.coords[coord[0]][coord[1]] === 0) {
         this.state.coords[coord[0]][coord[1]] = -1;
@@ -48,33 +47,57 @@ var TicTacToe = React.createClass({
         break;
       }
     }
-    if (!moveMade && combinationIndexes && combinationIndexes.length) {
+    if (!moveMade && combinationIndexes.length) {
       combinationIndexes.shift();
       return this.makeMove(combinationIndexes);
     }
   },
 
+  checkResult: function () {
+    this.calculateProbabilities(this.state.coords, this.state.winningCombination).map((combinationScore, index) => {
+      if (combinationScore === -3) {
+        alert('You lost');
+        this.setState({ gameOver: true });
+      } else if (combinationScore === 3) {
+        alert('You win');
+        this.setState({ gameOver: true });
+      }
+    });
+  },
+
   handleClick: function (row, column) {
-    if (this.state.coords[row][column] !== 0) {
+    if (this.state.coords[row][column] !== 0 || this.state.gameOver) {
       return;
     }
     this.state.coords[row][column] = 1;
-    
+
     let maxScore = 0;
-    let combinationIndexes = [0,1,2,3,4,5,6,7];
-    this.calculateProbabilities(this.state.coords, this.state.winningCombination).map((combinationScore, index)=>{
+    let minScore = 0;
+    let combinationIndexes = [...Array(this.state.winningCombination.length - 1).keys()];
+    this.calculateProbabilities(this.state.coords, this.state.winningCombination).map((combinationScore, index) => {
+      if (combinationScore < minScore) {
+        minScore = combinationScore;
+        if (maxScore === 2) {
+          combinationIndexes.splice(1, 0, index);
+        } else {
+          combinationIndexes.unshift(index);
+        }
+      }
       if (combinationScore > maxScore) {
         maxScore = combinationScore;
-        combinationIndexes.unshift(index);
+        if (minScore === -2) {
+          combinationIndexes.splice(1, 0, index);
+        } else {
+          combinationIndexes.unshift(index);
+        }
       }
     });
-    if (maxScore === 3) {
-      alert('You win');
-    }
+    combinationIndexes = Array.from(new Set(combinationIndexes));
     this.makeMove(combinationIndexes);
     this.setState(this.state.coords);
+    this.checkResult();
   },
-  
+
   getPlayerIcon: function (num) {
     if (num === 1) {
       return 'X';
@@ -83,7 +106,14 @@ var TicTacToe = React.createClass({
     } else {
       return '.';
     }
-  }, 
+  },
+
+  startAgain: function () {
+    this.setState({
+      gameOver: false,
+      coords: JSON.parse(JSON.stringify(Array(3).fill([0, 0, 0])))
+    });
+  },
 
   render: function () {
     let pane = this.state.coords.map((row, index) => {
@@ -96,9 +126,9 @@ var TicTacToe = React.createClass({
 
     return <div>
       {pane}
+      <div onClick={this.startAgain}>Start Again</div>
     </div>;
   }
 });
 
 React.render(<TicTacToe />, document.body);
-
