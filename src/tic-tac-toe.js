@@ -73,26 +73,14 @@ const TicTacToe = React.createClass({
 
     let maxScore = 0;
     let minScore = 0;
-    let combinationIndexes = [...Array(this.state.winningCombination.length - 1).keys()];
-    this.calculateProbabilities(this.state.coords, this.state.winningCombination).map((combinationScore, index) => {
-      if (combinationScore < minScore) {
-        minScore = combinationScore;
-        if (maxScore === 2) {
-          combinationIndexes.splice(1, 0, index);
-        } else {
-          combinationIndexes.unshift(index);
-        }
-      }
-      if (combinationScore > maxScore) {
-        maxScore = combinationScore;
-        if (minScore === -2) {
-          combinationIndexes.splice(1, 0, index);
-        } else {
-          combinationIndexes.unshift(index);
-        }
-      }
-    });
-    combinationIndexes = Array.from(new Set(combinationIndexes));
+    let combinationIndexes = [...Array(this.state.winningCombination.length).keys()];
+    let p = this.calculateProbabilities(this.state.coords, this.state.winningCombination);
+    combinationIndexes.sort((a, b) => {
+      return (p[a] > p[b]) ? -1 : 1;
+    }).sort((a, b) => {
+      return (p[a] === -2 || p[b] === -2) ? 1 : 0;
+    })
+
     this.makeMove(combinationIndexes);
     this.setState(this.state.coords);
     this.checkResult();
