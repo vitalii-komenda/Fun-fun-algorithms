@@ -33,23 +33,21 @@ const TicTacToe = React.createClass({
     });
   },
 
-  makeMove: function (combinationIndexes) {
+  makeMove: function (combinationIndexes, coords) {
     let combinationIndex = combinationIndexes[0];
-    let moveMade = false;
     if (!this.state.winningCombination[combinationIndex]) {
       return;
     }
     for (let i = 0; i < this.state.winningCombination[combinationIndex].length; i++) {
       let coord = this.state.winningCombination[combinationIndex][i];
-      if (this.state.coords[coord[0]][coord[1]] === 0) {
-        this.state.coords[coord[0]][coord[1]] = -1;
-        moveMade = true;
-        break;
+      if (coords[coord[0]][coord[1]] === 0) {
+        coords[coord[0]][coord[1]] = -1;
+        return coords;
       }
     }
-    if (!moveMade && combinationIndexes.length) {
+    if (combinationIndexes.length) {
       combinationIndexes.shift();
-      return this.makeMove(combinationIndexes);
+      return this.makeMove(combinationIndexes, coords);
     }
   },
 
@@ -81,7 +79,10 @@ const TicTacToe = React.createClass({
       return (p[a] === -2 || p[b] === -2) ? 1 : 0;
     })
 
-    this.makeMove(combinationIndexes);
+    this.state.coords = this.makeMove(
+      this.clone(combinationIndexes), 
+      this.clone(this.state.coords)
+    );
     this.setState(this.state.coords);
     this.checkResult();
   },
@@ -95,11 +96,15 @@ const TicTacToe = React.createClass({
       return '.';
     }
   },
+  
+  clone: function (obj) {
+    return JSON.parse(JSON.stringify(obj));
+  },
 
   startAgain: function () {
     this.setState({
       gameOver: false,
-      coords: JSON.parse(JSON.stringify(Array(3).fill([0, 0, 0])))
+      coords: this.clone(Array(3).fill([0, 0, 0]))
     });
   },
 
