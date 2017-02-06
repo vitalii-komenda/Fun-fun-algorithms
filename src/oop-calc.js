@@ -1,11 +1,11 @@
-var node = function (node) {
+const Node = function (node) {
   this.node = node;
   this.evalute = function() {
     return this.node.evalute();
   }
 };
 
-var addNode = function (left, right) {
+const AddNode = function (left, right) {
   this.left = left;
   this.right = right;
   this.evalute = function () {
@@ -13,7 +13,7 @@ var addNode = function (left, right) {
   };
 };
 
-var multiplyNode = function (left, right) {
+const MultiplyNode = function (left, right) {
   this.left = left;
   this.right = right;
   this.evalute = function () {
@@ -22,21 +22,21 @@ var multiplyNode = function (left, right) {
 }
 
 
-var valueNode = function (value) {
+const ValueNode = function (value) {
   this.value = value;
   this.evalute = function () {
     return this.value;
   }
 };
 
-r = new node(
-  new addNode(
-    new multiplyNode(
-      new valueNode(5),
-      new valueNode(5)
+const calculator = new Node(
+  new AddNode(
+    new MultiplyNode(
+      new ValueNode(5),
+      new ValueNode(5)
     ),
-    new valueNode(5)
+    new ValueNode(5)
   )
 );
 
-r.evalute();
+calculator.evalute();
