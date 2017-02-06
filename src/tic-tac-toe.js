@@ -51,16 +51,18 @@ const TicTacToe = React.createClass({
     }
   },
 
-  checkResult: function () {
-    this.calculateProbabilities(this.state.coords, this.state.winningCombination).map((combinationScore, index) => {
+  checkResult: function (state) {
+    let gameOver;
+    this.calculateProbabilities(state.coords, this.state.winningCombination).map((combinationScore, index) => {
       if (combinationScore === -3) {
         alert('You lost');
-        this.setState({ gameOver: true });
+        gameOver = true;
       } else if (combinationScore === 3) {
         alert('You win');
-        this.setState({ gameOver: true });
+        gameOver = true;
       }
     });
+    return gameOver;
   },
 
   handleClick: function (row, column) {
@@ -81,8 +83,8 @@ const TicTacToe = React.createClass({
       this.clone(combinationIndexes), 
       this.clone(this.state.coords)
     );
+    this.state.gameOver = this.checkResult(this.state);
     this.setState(this.state.coords);
-    this.checkResult();
   },
 
   getPlayerIcon: function (num) {
