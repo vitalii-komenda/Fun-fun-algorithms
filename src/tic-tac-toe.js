@@ -1,6 +1,7 @@
-const TicTacToe = React.createClass({
-  getInitialState: function () {
-    return {
+class TicTacToe extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       coords: [
         [0, 0, 0],
         [0, 0, 0],
@@ -19,9 +20,9 @@ const TicTacToe = React.createClass({
         [[0, 2], [1, 1], [2, 0]],
       ]
     };
-  },
+  }
 
-  calculateProbabilities: (state, winningCombination) => {
+  calculateProbabilities(state, winningCombination) {
     const calculateProbability = (combination, state) => {
       return combination.reduce((acc, coord) => {
         return acc + state[coord[0]][coord[1]];
@@ -31,12 +32,12 @@ const TicTacToe = React.createClass({
     return winningCombination.map((combination) => {
       return calculateProbability(combination, state);
     });
-  },
+  }
 
-  makeMove: function (combinationIndexes, coords) {
+  makeMove(combinationIndexes, coords) {
     let combinationIndex = combinationIndexes[0];
     if (!this.state.winningCombination[combinationIndex]) {
-      return;
+      return coords;
     }
     for (let i = 0; i < this.state.winningCombination[combinationIndex].length; i++) {
       let coord = this.state.winningCombination[combinationIndex][i];
@@ -49,24 +50,16 @@ const TicTacToe = React.createClass({
       combinationIndexes.shift();
       return this.makeMove(combinationIndexes, coords);
     }
-  },
+  }
 
-  checkResult: function (state) {
-    let gameOver;
-    this.calculateProbabilities(state.coords, this.state.winningCombination).map((combinationScore, index) => {
-      if (combinationScore === -3) {
-        alert('You lost');
-        gameOver = true;
-      } else if (combinationScore === 3) {
-        alert('You win');
-        gameOver = true;
-      }
-    });
-    return gameOver;
-  },
+  getScore(state) {
+    return this.calculateProbabilities(state.coords, this.state.winningCombination).filter((combinationScore, index) => {
+      return [3, -3].includes(combinationScore);
+    })[0];
+  }
 
-  handleClick: function (row, column) {
-    if (this.state.coords[row][column] !== 0 || this.state.gameOver) {
+  handleClick(row, column) {
+    if (this.state.coords[row][column] !== 0 || this.isGameOver()) {
       return;
     }
     this.state.coords[row][column] = 1;
@@ -83,11 +76,16 @@ const TicTacToe = React.createClass({
       this.clone(combinationIndexes), 
       this.clone(this.state.coords)
     );
-    this.state.gameOver = this.checkResult(this.state);
+    this.state.score = this.getScore(this.state);
     this.setState(this.state.coords);
-  },
+    if (this.state.score === -3) {
+      alert('You lost');
+    } else if(this.state.score === 3) {
+      alert('You win');
+    }
+  }
 
-  getPlayerIcon: function (num) {
+  getPlayerIcon(num) {
     if (num === 1) {
       return 'X';
     } else if (num === -1) {
@@ -95,20 +93,24 @@ const TicTacToe = React.createClass({
     } else {
       return '.';
     }
-  },
+  }
   
-  clone: function (obj) {
+  clone(obj) {
     return JSON.parse(JSON.stringify(obj));
-  },
+  }
+  
+  isGameOver() {
+    return [-3, 3].includes(this.state.score);
+  }
 
-  startAgain: function () {
+  startAgain() {
     this.setState({
-      gameOver: false,
+      score: 0,
       coords: this.clone(Array(3).fill([0, 0, 0]))
     });
-  },
+  }
 
-  render: function () {
+  render() {
     let pane = this.state.coords.map((row, index) => {
       return <div key={Math.random()}>
         <div className="cell" onClick={this.handleClick.bind(this, index, 0)}>{this.getPlayerIcon(row[0])}</div>
@@ -119,9 +121,9 @@ const TicTacToe = React.createClass({
 
     return <div>
       {pane}
-      <div onClick={this.startAgain}>Start Again</div>
+      <div onClick={this.startAgain.bind(this)}>Start Again</div>
     </div>;
   }
-});
+};
 
 React.render(<TicTacToe />, document.body);
