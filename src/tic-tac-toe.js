@@ -70,14 +70,23 @@ class TicTacToe extends React.Component {
       return (p[a] > p[b]) ? -1 : 1;
     }).sort((a, b) => {
       return (p[a] === -2 || p[b] === -2) ? 1 : 0;
-    })
+    });
 
-    this.state.coords = this.makeMove(
-      this.clone(combinationIndexes), 
-      this.clone(this.state.coords)
-    );
     this.state.score = this.getScore(this.state);
-    this.setState(this.state.coords);
+    if (!this.isGameOver()) {
+      this.state.coords = this.makeMove(
+        this.clone(combinationIndexes), 
+        this.clone(this.state.coords)
+      );
+    }
+    this.state.score = this.getScore(this.state);
+    this.setState(this.state, ()=>{
+      this.checkResult();
+    });
+
+  }
+  
+  checkResult() {
     if (this.state.score === -3) {
       alert('You lost');
     } else if(this.state.score === 3) {
