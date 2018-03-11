@@ -9,8 +9,6 @@ const minNumberOfCoins = (coins, sum) => {
 
             if (coin <= i && isPrevSmaller) {
                 min[i] = prev + 1;
-            } else if (coin === i) {
-                min[i] = V[0];
             }
         }
     }
