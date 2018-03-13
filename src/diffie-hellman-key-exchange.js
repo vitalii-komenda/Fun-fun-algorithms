@@ -17,6 +17,6 @@ const dhKeyExchange = function(dividend=3, divisor=17) {
 
 
 // const obj = dhKeyExchange();
-// const res = obj.createTwoPublicKeys(6, 17);
-// obj.getSharedSecret(6, res.pubKey2); // 6
-// obj.getSharedSecret(17, res.pubKey1); // 6 the same
+// const res = obj.createTwoPublicKeys(14, 17);
+// obj.getSharedSecret(res.pubKey1, 17); // 2
+// obj.getSharedSecret(res.pubKey2, 14); // the same 2
