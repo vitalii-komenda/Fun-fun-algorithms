@@ -2,8 +2,8 @@ const dhKeyExchange = {
   dividend: 3,
   divisor: 17,
 
-  modulo() {
-    return this.dividend % this.divisor;
+  modulo(exp = 1) {
+    return this.dividend ** exp % this.divisor;
   },
   createTwoPublicKeys(secretKey1, secretKey2) {  
     return {
