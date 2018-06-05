@@ -1,4 +1,4 @@
-A list of algorithms that I have solved
+A list of algorithms
 ===
 
 List of algorithms: 
