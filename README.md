@@ -1,11 +1,11 @@
 This repo contains solved algorithms from various learning platforms
---
+==
 The purpose is to save my solutions for self improvement
 
 
 
 List of algorithms:
--
+---
 
 bb-to-html.php - converts bb tags to html 
 
