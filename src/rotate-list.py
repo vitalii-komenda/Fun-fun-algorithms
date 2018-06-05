@@ -3,6 +3,12 @@
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
+#
+# Input: 1->2->3->4->5->NULL, k = 2
+# Output: 4->5->1->2->3->NULL 
+# 
+# This problem is from LeetCode https://leetcode.com/explore/learn/card/linked-list/213/conclusion/1295/
+#
 
 class Solution(object):
     def rotateRight(self, head, k):
