@@ -19,3 +19,5 @@ tree.rb - prints a tree from a string
 ```
 
 min-number-of-coins.js - gets minimum number of coins to sum
+
+rotate-list.py - Given a linked list, rotate the list to the right by k places, where k is non-negative
