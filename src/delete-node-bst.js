@@ -32,7 +32,7 @@ let oneChild = (node) => {
 };
 let twoChildren = (node, rightParent, right) => {
     if (right.left) {
-        return twoChildren(node, right, right.left)
+        return twoChildren(node, right, right.left);
     }
     
     if (node.val === rightParent.val) {
@@ -41,7 +41,7 @@ let twoChildren = (node, rightParent, right) => {
         rightParent.left = right.right;
     }
     node.val = right.val;
-}
+};
 let del = (node, parent, val) => {
     if (!node) return;
 
@@ -69,3 +69,5 @@ let deleteNode = (root, key) => {
     
     return root;
 };
+
+export default deleteNode;
