@@ -5,13 +5,13 @@ The purpose is to save my solutions for self improvement
 
 ---
 
-bb-to-html.php - Converts bb tags to html 
+[bb-to-html.php](./src/bb-to-html.php) - Converts bb tags to html 
 
-oop-calc.js - Calculator that follows SOLID principles 
+[oop-calc.js](./src/oop-calc.js) - Calculator that follows SOLID principles 
 
-tic-tac-toe.js - Very dummy Tic Tac Toe game https://output.jsbin.com/qutujiw
+[tic-tac-toe.js](./src/tic-tac-toe.js) - Very dummy Tic Tac Toe game https://output.jsbin.com/qutujiw
 
-tree.rb - Prints a tree from a string
+[tree.rb](./src/tree.rb) - Prints a tree from a string
 ```
                          a
              b                       c                       
@@ -20,16 +20,16 @@ tree.rb - Prints a tree from a string
   p  q  r  s  t  u  v  w  x  y  z  1  2  3  4  5  
 ```
 
-min-number-of-coins.js - Gets minimum number of coins to sum
+[min-number-of-coins.js](./src/min-number-of-coins.js) - Gets minimum number of coins to sum
 
-rotate-list.py - Given a linked list, rotate the list to the right by k places, where k is non-negative
+[rotate-list.py](./src/rotate-list.py) - Given a linked list, rotate the list to the right by k places, where k is non-negative
 
-delete-node-bst.js - Delete Node in a BST
+[delete-node-bst.js](./src/delete-node-bst.js) - Delete Node in a BST
 
-caesar-cipher.js - Ancient caesar cipher
+[caesar-cipher.js](./src/caesar-cipher.js) - Ancient caesar cipher
 
-diffie-hellman-key-exchange.js - Diffie hellman key exchange POC
+[diffie-hellman-key-exchange.js](./src/diffie-hellman-key-exchange.js) - Diffie hellman key exchange POC
 
-zeros-to-left-sort.js - Sorts zero's to left
+[zeros-to-left-sort.js](./src/zeros-to-left-sort.js) - Sorts zero's to left
 
-smallest-letter-gt-target.js Find Smallest Letter Greater Than Target
+[smallest-letter-gt-target.js](./src/smallest-letter-gt-target.js) Find Smallest Letter Greater Than Target
