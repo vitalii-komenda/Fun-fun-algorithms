@@ -34,4 +34,4 @@ The purpose is to save my solutions for self improvement
 
 [smallest-letter-gt-target.py](./src/smallest-letter-gt-target.py) Find Smallest Letter Greater Than Target
 
-[climbing-stairs.py](./str/climbing-stairs.py) Climbing Stairs
+[climbing-stairs.py](./src/climbing-stairs.py) Climbing Stairs
