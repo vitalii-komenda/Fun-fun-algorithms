@@ -1,10 +1,8 @@
-List of solved algorithms from various learning platforms
+List of fun algorithms from various learning platforms
 ==
 The purpose is to save my solutions for self improvement
 
 
-
-List of algorithms:
 ---
 
 bb-to-html.php - Converts bb tags to html 
@@ -33,3 +31,5 @@ caesar-cipher.js - Ancient caesar cipher
 diffie-hellman-key-exchange.js - Diffie hellman key exchange POC
 
 zeros-to-left-sort.js - Sorts zero's to left
+
+smallest-letter-gt-target.js Find Smallest Letter Greater Than Target
