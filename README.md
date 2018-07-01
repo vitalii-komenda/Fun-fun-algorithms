@@ -30,6 +30,6 @@ The purpose is to save my solutions for self improvement
 
 [diffie-hellman-key-exchange.js](./src/diffie-hellman-key-exchange.js) - Diffie hellman key exchange POC
 
-[zeros-to-left-sort.js](./src/zeros-to-left-sort.js) - Sorts zero's to left
+[zeros-to-right-sort.js](./src/zeros-to-right-sort.js) - Sorts zero's to left
 
 [smallest-letter-gt-target.py](./src/smallest-letter-gt-target.py) Find Smallest Letter Greater Than Target
