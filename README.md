@@ -11,7 +11,7 @@ The purpose is to save my solutions for self improvement
 
 [tic-tac-toe.js](./src/tic-tac-toe.js) - Very dummy Tic Tac Toe game https://output.jsbin.com/qutujiw
 
-[tree.rb](./src/tree.rb) - Prints a tree from a string
+[tree.rb](./src/tree_printer/tree.rb) - Prints a tree from a string
 ```
                          a
              b                       c                       
@@ -32,4 +32,4 @@ The purpose is to save my solutions for self improvement
 
 [zeros-to-left-sort.js](./src/zeros-to-left-sort.js) - Sorts zero's to left
 
-[smallest-letter-gt-target.js](./src/smallest-letter-gt-target.js) Find Smallest Letter Greater Than Target
+[smallest-letter-gt-target.py](./src/smallest-letter-gt-target.py) Find Smallest Letter Greater Than Target
