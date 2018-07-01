@@ -33,3 +33,5 @@ The purpose is to save my solutions for self improvement
 [zeros-to-right-sort.js](./src/zeros-to-right-sort.js) - Sorts zero's to left
 
 [smallest-letter-gt-target.py](./src/smallest-letter-gt-target.py) Find Smallest Letter Greater Than Target
+
+[climbing-stairs.py](./strc/climbing-stairs.py) Climbing Stairs
