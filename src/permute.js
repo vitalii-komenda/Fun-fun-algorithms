@@ -7,7 +7,7 @@ const stepPermutation = (permutationsOfAllCharsExceptLast, lastChar, j) => {
     return permutation;
 };
 
-const permute = function(arr) {
+const permute = (arr) => {
     if (arr.length < 0) return ;
     if (arr.length === 1) return [arr];
 
