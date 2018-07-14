@@ -37,3 +37,5 @@ The purpose is to save my solutions for self improvement
 [climbing-stairs.py](./src/climbing-stairs.py) Climbing Stairs
 
 [permute.js](./src/permute.js) All possible permutations 
+
+[add-and-search-word.js](./src/add-and-search-word.js) Add and Search Word
