@@ -14,7 +14,7 @@ More details at https://leetcode.com/explore/learn/card/trie/148/practical-appli
 
 
 const node = (isWord, val) => {
-    return {isWord: isWord, val: val, children: {}};
+    return {isWord, val, children: {}};
 };
 
 /**
@@ -52,10 +52,8 @@ WordDictionary.prototype.addWord = function(word) {
  * @return {boolean}
  */
 WordDictionary.prototype.search = function(word, root = this.root) {
-    const startFrom = []
-
     for (let i=0; i<word.length; i++) {
-        if (word[i] === '.') {
+        if (word[i] === ".") {
             for(const children in root.children) {                
                 if (this.search(word.slice(i+1), root.children[children])) {
                     return true;
@@ -63,9 +61,9 @@ WordDictionary.prototype.search = function(word, root = this.root) {
             }
             return false;
         } else if (root.children && root.children[word[i]]) {
-            root = root.children[word[i]]
+            root = root.children[word[i]];
         } else {
-            return false
+            return false;
         }
     }
     
