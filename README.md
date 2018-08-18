@@ -39,3 +39,5 @@ The purpose is to save my solutions for self improvement
 [permute.js](./src/permute.js) All possible permutations 
 
 [add-and-search-word.js](./src/add-and-search-word.js) Add and Search Word
+
+[longest-common-subsequence.js](./src/longest-common-subsequence.js) Longest Common Subsequence (Naive without dynamic programming)
