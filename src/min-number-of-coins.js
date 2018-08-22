@@ -1,4 +1,5 @@
-const minNumberOfCoins = (coins, sum) => {
+// minNumberOfCoins([1, 3, 5], 11);
+export const minNumberOfCoins = (coins, sum) => {
     const min = Array.from(new Array(sum + 1), () => 0);
 
     for(let i=1; i <= sum; i++) {
@@ -16,5 +17,4 @@ const minNumberOfCoins = (coins, sum) => {
         sequence: min,
         sum: min[min.length - 1]
     };
-}
-// minNumberOfCoins([1, 3, 5], 11);
+};
