@@ -13,7 +13,7 @@ const findNonZero = (arr, from) => {
   return -1;
 }
 
-const sort = (arr) => {
+export const sort = (arr) => {
   let i = 0;
   while(i < arr.length) {
     if (arr[i] === 0) {
