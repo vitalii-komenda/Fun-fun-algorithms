@@ -53,7 +53,7 @@ class TicTacToe extends React.Component {
   }
 
   getScore(state) {
-    return this.calculateProbabilities(state.coords, this.state.winningCombination).filter((combinationScore, index) => {
+    return this.calculateProbabilities(state.coords, this.state.winningCombination).filter((combinationScore) => {
       return [3, -3].includes(combinationScore);
     })[0];
   }
