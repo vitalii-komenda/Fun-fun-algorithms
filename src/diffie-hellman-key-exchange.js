@@ -1,4 +1,9 @@
-const dhKeyExchange = function(dividend=3, divisor=17) {
+// const obj = dhKeyExchange();
+// const res = obj.createTwoPublicKeys(14, 17);
+// obj.getSharedSecret(res.pubKey1, 17); // 2
+// obj.getSharedSecret(res.pubKey2, 14); // the same 2
+
+export const dhKeyExchange = function(dividend=3, divisor=17) {
   return {
     modulo(exp = 1) {
       return dividend ** exp % divisor;
@@ -14,9 +19,3 @@ const dhKeyExchange = function(dividend=3, divisor=17) {
     }
   }
 }
-
-
-// const obj = dhKeyExchange();
-// const res = obj.createTwoPublicKeys(14, 17);
-// obj.getSharedSecret(res.pubKey1, 17); // 2
-// obj.getSharedSecret(res.pubKey2, 14); // the same 2
