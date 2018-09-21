@@ -11,7 +11,7 @@ const del = (base, from, len) => {
 	while(len > 0) {
 		base[from--] = null;
 		len--;
-    }
+	}
 	return base;
 };
 
@@ -22,11 +22,11 @@ export const withoutString = (base, remove) => {
 			while(base[i] === remove[rI] && remove[rI]) {
 				i++;
 				rI++;
-            }
+			}
 			if (base[i-1] === remove[rI-1] && remove.length === rI) {
 				del(base, i-1, remove.length);
-            }
-            rI = 0;
+			}
+			rI = 0;
 		}
 	}
 
