@@ -30,5 +30,5 @@ export const withoutString = (base, remove) => {
 		}
 	}
 
-	return base.join('');
-}
+	return base.join("");
+};
