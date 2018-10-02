@@ -15,8 +15,8 @@ const del = (base, from, len) => {
 	return base;
 };
 
-export const withoutString = (base, remove) => {
-	let base = base.split("")
+export const withoutString = (from, remove) => {
+	let base = from.split("")
 	let rI = 0;
 	for(let i=0; i<base.length; i++) {
 		if (base[i] === remove[rI]){
