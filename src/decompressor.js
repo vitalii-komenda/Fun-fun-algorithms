@@ -1,45 +1,43 @@
 export const isNum = (s) => ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(s);
 
 export const repeatString = (str, repeatTimes, i) => {
-	let res = [];
-    let j
-	for(j=i+1; j<str.length; j++) {
-		if (str[j] === ']') {
-			return [res.join('').repeat(repeatTimes), j];
-		}
+    let res = [];
+    let j;
+    for (j = i + 1; j < str.length; j++) {
+        if (str[j] === ']') {
+            return [res.join('').repeat(repeatTimes), j];
+        }
         if (isNum(str[j])) {
             let localRes = dec(str, j);
 
             res.push(localRes[0]);
-            j = localRes[1]-1;
+            j = localRes[1] - 1;
         } else {
             res.push(str[j]);
         }
-	}
+    }
     return [res.join('').repeat(repeatTimes), j];
 }
 
 export const dec = (str, start = 0) => {
-	let res = [];
-	let num = [];
+    let res = [];
+    let num = [];
     let i;
-	for(i=start; i<str.length; i++) {
-		let c = str[i];
-		if (isNum(c)) {
-			num.push(c);
-		}
-		else if (c === '[') {
-			let localRes = repeatString(str, parseInt(num.join(''), 10), i);
-			res.push(localRes[0]);
-			num = [];
-			i = localRes[1];
-		}
-        else if (num.length === 0) {
+    for (i = start; i < str.length; i++) {
+        let c = str[i];
+        if (isNum(c)) {
+            num.push(c);
+        } else if (c === '[') {
+            let localRes = repeatString(str, parseInt(num.join(''), 10), i);
+            res.push(localRes[0]);
+            num = [];
+            i = localRes[1];
+        } else if (num.length === 0) {
             break;
         }
-	};
+    };
 
-	return [res.join(''), i];
+    return [res.join(''), i];
 }
 
 
