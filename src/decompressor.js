@@ -11,14 +11,14 @@
 
 
 
-const isNum = (s) => ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(s);
+const isNum = (s) => ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(s);
 
 const repeatString = (str, repeatTimes, i) => {
     let res = [];
     let j;
     for (j = i + 1; j < str.length; j++) {
-        if (str[j] === ']') {
-            return [res.join('').repeat(repeatTimes), j];
+        if (str[j] === "]") {
+            return [res.join("").repeat(repeatTimes), j];
         }
         if (isNum(str[j])) {
             let localRes = dec(str, j);
@@ -29,8 +29,8 @@ const repeatString = (str, repeatTimes, i) => {
             res.push(str[j]);
         }
     }
-    return [res.join('').repeat(repeatTimes), j];
-}
+    return [res.join("").repeat(repeatTimes), j];
+};
 
 const dec = (str, start = 0) => {
     let res = [];
@@ -40,8 +40,8 @@ const dec = (str, start = 0) => {
         let c = str[i];
         if (isNum(c)) {
             num.push(c);
-        } else if (c === '[') {
-            let localRes = repeatString(str, parseInt(num.join(''), 10), i);
+        } else if (c === "[") {
+            let localRes = repeatString(str, parseInt(num.join(""), 10), i);
             res.push(localRes[0]);
             num = [];
             i = localRes[1];
@@ -50,9 +50,9 @@ const dec = (str, start = 0) => {
         }
     };
 
-    return [res.join(''), i];
-}
+    return [res.join(""), i];
+};
 
 export const decompress = (str) => {
     return dec(str)[0];
-}
+};
