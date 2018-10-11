@@ -1,3 +1,16 @@
+/*
+ It decompressing strings
+
+ Examples:
+ console.log(dec("2[3[a]b]")); // aaabaaab
+ console.log(dec("2[3[4[q]a]b]")); //qqqqaqqqqaqqqqabqqqqaqqqqaqqqqab
+ console.log(dec("2[0[q]r]")); //rr
+ console.log(dec("a[]b")); //
+ console.log(dec("2[2[2[a]]q]")); // aaaaqaaaaq
+*/
+
+
+
 const isNum = (s) => ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(s);
 
 const repeatString = (str, repeatTimes, i) => {
@@ -19,7 +32,7 @@ const repeatString = (str, repeatTimes, i) => {
     return [res.join('').repeat(repeatTimes), j];
 }
 
-export const dec = (str, start = 0) => {
+const dec = (str, start = 0) => {
     let res = [];
     let num = [];
     let i;
@@ -40,9 +53,6 @@ export const dec = (str, start = 0) => {
     return [res.join(''), i];
 }
 
-
-// console.log(dec("2[3[a]b]"));
-// console.log(dec("2[3[4[q]a]b]"));
-// console.log(dec("2[0[q]r]"));
-// console.log(dec("a[]b"));
-// console.log(dec("2[2[2[a]]q]"));
+export const decompress = (str) => {
+    return dec(str)[0];
+}
