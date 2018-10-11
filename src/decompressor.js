@@ -1,6 +1,6 @@
-export const isNum = (s) => ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(s);
+const isNum = (s) => ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(s);
 
-export const repeatString = (str, repeatTimes, i) => {
+const repeatString = (str, repeatTimes, i) => {
     let res = [];
     let j;
     for (j = i + 1; j < str.length; j++) {
