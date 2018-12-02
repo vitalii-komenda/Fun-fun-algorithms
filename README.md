@@ -1,4 +1,4 @@
-List of fun algorithms from various learning platforms
+List of fun fun algorithms from various learning platforms
 ==
 The purpose is to save my solutions for self improvement
 
