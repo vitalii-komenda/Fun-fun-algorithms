@@ -41,3 +41,7 @@ The purpose is to save my solutions for self improvement
 [add-and-search-word.js](./src/add-and-search-word.js) Add and Search Word
 
 [longest-common-subsequence.js](./src/longest-common-subsequence.js) Longest Common Subsequence (Naive without dynamic programming)
+
+[decompressor.js](./src/decompressor.js) Given an encoded string, return it's decoded string
+
+[decompressor-stack.js](./src/decompressor-stack.js) The same as decompressor.js but using stack
