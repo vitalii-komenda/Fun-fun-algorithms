@@ -18,7 +18,9 @@
  * @return {boolean}
  */
 const canReach = (arr, p = 0, mem = {}) => {
-    if (p === arr.length - 1) return true;
+    if (p === arr.length - 1) {
+        return true;
+    }
     let jmps = arr[p];
     mem[p] = true;
 
