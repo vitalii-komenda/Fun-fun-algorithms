@@ -24,15 +24,19 @@ const canReach = (arr, p=0, mem={}) => {
   mem[p] = true;
   
   while(jmps>0){
-      if (mem[p+jmps]) break;
-    
-      if (canReach(arr, p+jmps, mem)) return true; 
+      if (mem[p+jmps]) {
+        break;
+      }
+
+      if (canReach(arr, p+jmps, mem)) {
+        return true;
+      }
       jmps -= 1;
   }
   
   return res;
 };  
 
-const canJump = function(nums) {
+export const canJump = function(nums) {
     return canReach(nums);
 };
