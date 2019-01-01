@@ -45,3 +45,5 @@ The purpose is to store my solutions for self improvement
 [decompressor.js](./src/decompressor.js) Given an encoded string, return it's decoded string
 
 [decompressor-stack.js](./src/decompressor-stack.js) The same as decompressor.js but using stack
+
+[jump-game.js](./src/jump-game.js) Determine if you are able to reach the last index.
