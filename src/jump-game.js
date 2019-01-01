@@ -20,7 +20,6 @@
 const canReach = (arr, p = 0, mem = {}) => {
     if (p === arr.length - 1) return true;
     let jmps = arr[p];
-    let res = false;
     mem[p] = true;
 
     while (jmps > 0) {
@@ -34,7 +33,7 @@ const canReach = (arr, p = 0, mem = {}) => {
         jmps -= 1;
     }
 
-    return res;
+    return false;
 };
 
 export const canJump = function (nums) {
