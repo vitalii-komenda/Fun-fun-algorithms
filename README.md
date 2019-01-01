@@ -47,3 +47,5 @@ The purpose is to store my solutions for self improvement
 [decompressor-stack.js](./src/decompressor-stack.js) The same as decompressor.js but using stack
 
 [jump-game.js](./src/jump-game.js) Determine if you are able to reach the last index.
+
+[unique-paths.js](./src/unique-paths.js) Determine how many possible unique paths are there
