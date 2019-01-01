@@ -17,26 +17,26 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-const canReach = (arr, p=0, mem={}) => {
-  if(p === arr.length-1) return true;
-  let jmps = arr[p];
-  let res = false;
-  mem[p] = true;
-  
-  while(jmps>0){
-      if (mem[p+jmps]) {
-        break;
-      }
+const canReach = (arr, p = 0, mem = {}) => {
+    if (p === arr.length - 1) return true;
+    let jmps = arr[p];
+    let res = false;
+    mem[p] = true;
 
-      if (canReach(arr, p+jmps, mem)) {
-        return true;
-      }
-      jmps -= 1;
-  }
-  
-  return res;
-};  
+    while (jmps > 0) {
+        if (mem[p + jmps]) {
+            break;
+        }
 
-export const canJump = function(nums) {
+        if (canReach(arr, p + jmps, mem)) {
+            return true;
+        }
+        jmps -= 1;
+    }
+
+    return res;
+};
+
+export const canJump = function (nums) {
     return canReach(nums);
 };
