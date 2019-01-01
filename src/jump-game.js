@@ -17,19 +17,19 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-const canReach = (arr, p = 0, mem = {}) => {
-    if (p === arr.length - 1) {
+const canReach = (arr, idx = 0, mem = {}) => {
+    if (idx === arr.length - 1) {
         return true;
     }
-    let jmps = arr[p];
-    mem[p] = true;
+    let jmps = arr[idx];
+    mem[idx] = true;
 
     while (jmps > 0) {
-        if (mem[p + jmps]) {
+        if (mem[idx + jmps]) {
             break;
         }
 
-        if (canReach(arr, p + jmps, mem)) {
+        if (canReach(arr, idx + jmps, mem)) {
             return true;
         }
         jmps -= 1;
