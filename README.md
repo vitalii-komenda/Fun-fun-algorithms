@@ -49,3 +49,5 @@ The purpose is to store my solutions for self improvement
 [jump-game.js](./src/jump-game.js) Determine if you are able to reach the last index.
 
 [unique-paths.js](./src/unique-paths.js) Determine how many possible unique paths are there
+
+[word-search.js](./src/word-search.js) Given a 2D board and a word, find if the word exists in the grid.
