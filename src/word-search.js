@@ -20,7 +20,7 @@
 
 const key = (r, c) => `${r}-${c}`;
 const isValid = (board, r, c) => board.length > r && r >= 0 && 
-      board[0].length > c && c >= 0
+      board[0].length > c && c >= 0;
 
 const exist = function(board, word) {
     const inspect = (board, word, r, c, path = {}) => {
@@ -35,8 +35,8 @@ const exist = function(board, word) {
         return inspect(board, nWord, r+1, c, nPath) ||
             inspect(board, nWord, r, c+1, nPath) ||
             inspect(board, nWord, r-1, c, nPath) ||
-            inspect(board, nWord, r, c-1, nPath)
-    }
+            inspect(board, nWord, r, c-1, nPath);
+    };
 
     for (let r=0; r<board.length; r++) {
         for (let c=0; c<board[0].length; c++) {
@@ -45,7 +45,7 @@ const exist = function(board, word) {
             }
         }
     }
-    return false
+    return false;
 };
 
 export default exist;
