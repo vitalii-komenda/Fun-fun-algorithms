@@ -51,3 +51,5 @@ The purpose is to store my solutions for self improvement
 [unique-paths.js](./src/unique-paths.js) Determine how many possible unique paths are there
 
 [word-search.js](./src/word-search.js) Given a 2D board and a word, find if the word exists in the grid.
+
+[game-of-life.js](./src/game-of-life.js) Game of life 
