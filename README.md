@@ -52,4 +52,6 @@ The purpose is to store my solutions for self improvement
 
 [word-search.js](./src/word-search.js) Given a 2D board and a word, find if the word exists in the grid.
 
-[game-of-life.js](./src/game-of-life.js) Game of life 
+[game-of-life.js](./src/game-of-life.js) Game of life
+
+[surrounded-regions.js](./src/surrounded-regions.js) Surrounded regions
