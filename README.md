@@ -55,3 +55,5 @@ The purpose is to store my solutions for self improvement
 [game-of-life.js](./src/game-of-life.js) Game of life
 
 [surrounded-regions.js](./src/surrounded-regions.js) Surrounded regions
+
+[topological-sort.js](./src/topological-sort.js) Topological sort
