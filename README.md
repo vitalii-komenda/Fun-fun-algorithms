@@ -57,3 +57,7 @@ The purpose is to store my solutions for self improvement
 [surrounded-regions.js](./src/surrounded-regions.js) Surrounded regions
 
 [topological-sort.js](./src/topological-sort.js) Topological sort
+
+[snakes-and-ladders.js](./src/snakes-and-ladders.js) Snakes and Ladders: The Quickest Way Up
+
+
