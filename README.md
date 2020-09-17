@@ -60,4 +60,5 @@ The purpose is to store my solutions for self improvement
 
 [snakes-and-ladders.js](./src/snakes-and-ladders.js) Snakes and Ladders: The Quickest Way Up
 
+[largest-group.js](./src/largest-group.js) Largest group of connected items. (Union find)
 
