@@ -62,5 +62,5 @@ The purpose is to store my solutions for self improvement
 
 [largest-group.js](./src/largest-group.js) Largest group of connected items. (Union find)
 
-[sudoku.js](./src/sudoku.js) Sudoku solver
+[sudoku.js](./src/sudoku.js) Sudoku solver (Backtracking)
 
