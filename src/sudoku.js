@@ -1,8 +1,9 @@
 // matrix 9*9
 // https://jsbin.com/paminob/edit?js,console
 
+// In place mutates board param
 const solveSudoku = function (board) {
-    const original = JSON.parse(JSON.stringify(grid));
+    const original = JSON.parse(JSON.stringify(board));
 
     const checkSquare = (grid, row, col) => {
         let n = Math.sqrt(size);
@@ -36,17 +37,12 @@ const solveSudoku = function (board) {
         return checkSquare(board, r + 1, c + 1);
     };
 
-    const solve = (board, r = 0, c = 0, ii = 1) => {
-        if (r >= board.length || c >= board[0].length) return true;
-
-        let nextC;
-        let nextR;
-
-        for (let i = ii; i < 10; i++) {
+    const solve = (board, r = 0, c = 0) => {
+        for (let i = 1; i < 10; i++) {
             if (original[r][c] === '.') board[r][c] = i;
 
-            nextC = c + 1;
-            nextR = r;
+            let nextC = c + 1;
+            let nextR = r;
             if (nextC >= board[0].length) {
                 nextC = 0;
                 nextR++;
@@ -54,7 +50,7 @@ const solveSudoku = function (board) {
             if (nextR >= board.length) return valid(board, r, c);
 
             if (valid(board, r, c)) {
-                if (solve(board, nextR, nextC, 1)) return true;
+                if (solve(board, nextR, nextC)) return true;
             } else {
                 if (original[r][c] === '.') board[r][c] = '.';
             }
