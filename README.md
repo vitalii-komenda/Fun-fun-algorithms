@@ -36,7 +36,9 @@ The purpose is to store my solutions for self improvement
 
 [climbing-stairs.py](./src/climbing-stairs.py) Climbing Stairs
 
-[permute.js](./src/permute.js) All possible permutations 
+[permute.js](./src/permute.js) All possible permutations
+
+[permute-super-simple.js](./src/permute-super-simple.js) All possible permutations. Very simple and very inefficient
 
 [add-and-search-word.js](./src/add-and-search-word.js) Add and Search Word
 
