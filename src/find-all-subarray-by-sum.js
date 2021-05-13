@@ -15,8 +15,12 @@ const flsa = (a, s) => {
             p1++;
             if (p2<p1) p2 = p1; 
         } else if (sum < s) {
-            sum += a[p2];
-            if (p2 < a.length) p2++;
+            if(p2 < a.length) {
+                sum += a[p2];
+                p2++;
+            } else {
+                p1++;
+            }
         } else if (sum > s) {
             sum -= a[p1];
             p1++;
