@@ -1,7 +1,7 @@
 const arr = [12, 1, 2,3,7 ,5, 12];
 const s = 12;
 
-const flsa = (a, s) => {
+const findAllSubarrayBySum = (a, s) => {
     let p1 = 0;
     let p2 = 0
     let sum = a[p1];
@@ -28,4 +28,4 @@ const flsa = (a, s) => {
     }
     return res;
 };
-// flsa(arr, s)
+// findAllSubarrayBySum(arr, s)
