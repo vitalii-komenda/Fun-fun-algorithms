@@ -10,6 +10,9 @@ const findAllSubarrayBySum = (a, s) => {
 
     while(p1 < a.length) {
         if (sum === s) {
+            
+            // len = Math.max(len, p2-p1 < 1 ? 1 : p2-p1) // longest subarray
+            
             res.push([p1, p2-1 < 0 ? 0 : p2-1]);
             sum -= a[p1];
             p1++;
