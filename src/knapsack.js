@@ -1,6 +1,6 @@
-items=[{v: 5, w: 10}, {v: 1, w: 1}, {v: 3, w: 4}]
+// const items=[{v: 5, w: 10}, {v: 1, w: 1}, {v: 3, w: 4}]
 
-knp = (items, selected, maxWeight, val)=>{
+const knp = (items, selected, maxWeight, val)=>{
     if (maxWeight === 0) return [val, selected];
     if (maxWeight < 0) return [0, selected];
     if (!items.length) return [val, selected];
@@ -16,3 +16,5 @@ knp = (items, selected, maxWeight, val)=>{
     
     return including[0] > notIncluding[0] ? including : notIncluding;
 }
+
+// knp(items, [], 5, 0)
