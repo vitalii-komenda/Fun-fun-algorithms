@@ -4,6 +4,7 @@ The purpose is to store my solutions for self improvement
 
 
 ---
+[knapsack.js](./src/knapsack.js) - Solves knapsack problem
 
 [bb-to-html.php](./src/bb-to-html.php) - Converts bb tags to html 
 
