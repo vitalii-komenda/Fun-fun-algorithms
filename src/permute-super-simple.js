@@ -11,8 +11,6 @@ const p = (arr, res = [], ans) => {
 
 const p2 = function (nums) {
   const result = [];
-  // TODO: Write your code here
-
   const f = (localNums, res) => {
     if (res.length >= nums.length || !localNums.length) {
       result.push(res);
