@@ -70,3 +70,5 @@ The purpose is to store my solutions for self improvement
 [find-all-subarray-by-sum.js](./src/find-all-subarray-by-sum.js) Find all subarray by sum (Two pointers)
 
 [find-nodes-at-k-distance.js](./src/find-nodes-at-k-distance.js) Find all nodes at K distance starting at N in BST
+
+[subsets.js](./src/subsets.js) Given a set with distinct elements, find all of its distinct subsets
