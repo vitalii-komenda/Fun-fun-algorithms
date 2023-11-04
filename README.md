@@ -1,6 +1,6 @@
-List of fun fun algorithms from various learning platforms
+List of fun fun algorithms
 ==
-The purpose is to store my solutions for self improvement
+The purpose is to implement algorithms for self-improvement
 
 
 ---
